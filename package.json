@@ -1,0 +1,45 @@
+{
+  "name": "our-favorite-things",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-static-gzip": "^2.1.1",
+    "node": "^16.6.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "compression-webpack-plugin": "^9.0.0",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "schema-utils": "^3.1.1",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "webpack --config webpack.dev.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "serve-dev": "nodemon ./server/server-start.js",
+    "serve-prod": "node ./server/server-start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carinij/our-favorite-things.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carinij/our-favorite-things/issues"
+  },
+  "homepage": "https://github.com/carinij/our-favorite-things#readme"
+}
