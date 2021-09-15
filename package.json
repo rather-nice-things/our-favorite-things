@@ -28,6 +28,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "webpack --config webpack.dev.js",
+    "build-dockerdev": "webpack --config webpack.dockerdev.js",
     "build-prod": "webpack --config webpack.prod.js",
     "serve-dev": "nodemon ./server/server-start.js",
     "serve-prod": "node ./server/server-start.js"
