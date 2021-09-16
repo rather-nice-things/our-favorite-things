@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-static-gzip": "^2.1.1",
+    "faker": "^5.5.3",
     "mongoose": "^6.0.6",
     "node": "^16.6.1",
     "react": "^17.0.2",
@@ -32,7 +33,9 @@
     "build-dockerdev": "webpack --config webpack.dockerdev.js",
     "build-prod": "webpack --config webpack.prod.js",
     "serve-dev": "nodemon ./server/server-start.js",
-    "serve-prod": "node ./server/server-start.js"
+    "serve-prod": "node ./server/server-start.js",
+    "drop": "node -e 'require(\"./database/database.js\").dropAllCollections()'",
+    "pop": "node ./database/populateDatabase.js"
   },
   "repository": {
     "type": "git",
