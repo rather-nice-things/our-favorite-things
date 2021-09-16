@@ -36,8 +36,36 @@ const addBlogEntry = (entry, callback) => {
   }, callback)
 }
 
+// Delete the database (careful!)
+const dropAllCollections = () => {
+  connection.on('connected', () => {
+    connection.db.listCollections().toArray((err, collections) => {
+      if (err) {
+        console.log('Error in making a list of collections: ' + err)
+        process.exit(0)
+      } else {
+        // Go through the list of collections and delete each one
+        for (let i = 0; i < collections.length; i++) {
+          connection.db.dropCollection(collections[i].name, (err) => {
+            if (err) {
+              console.log('Error in dropping collection ' + collections[i].name + ': ' + err)
+            } else {
+              console.log('Collection ' + collections[i].name + ' dropped.')
+            }
+            if (collections.length - i === 1) {
+              console.log('Finished dropping things!')
+              process.exit(0)
+            }
+          })
+        }
+      }
+    })
+  })
+}
+
 // Exports
 exports.getBlogEntry = getBlogEntry;
 exports.addBlogEntry = addBlogEntry;
+exports.dropAllCollections = dropAllCollections;
 exports.BlogEntry = BlogEntry;
 exports.connection = connection;
