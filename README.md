@@ -1,8 +1,12 @@
 ## Installation
-`npm i`
-`npm run build-dev`
-`npm run serve-dev`
-Navigate to: http://localhost:3000
+1. `npm i`
+2. Install and run MongoDB--see https://docs.mongodb.com/manual/installation/
+3. Update database.js (if necessary) with MongoDB information
+4. `npm run build-dev`
+5. `npm run serve-dev`
+6. `npm run pop insert-number-here` to populate the database with randomly created records
+7. Navigate to: http://localhost:3000
+8. `npm run drop` to delete all database information(!)
 
 ## Docker
 ### dev docker image
