@@ -1,16 +1,154 @@
-html,
+/* Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	line-height: 1;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+ol, ul {
+	list-style: none;
 }
 
-* {
-  box-sizing: border-box;
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Styles */
+
+body {
+  background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  background-color: rgba(255, 255, 255, 0.6)
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.6)
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 60px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 900;
+  font-family: 'Birthstone Bounce';
+}
+
+.nav-item:hover {
+  filter: brightness(150%);
+}
+
+.social-media-icon-container {
+  display: flex;
+}
+
+.social-media-icon {
+  margin-left: 10px;
+}
+
+.social-media-icon:hover {
+  filter: brightness(100%) saturate(200%);
+}
+
+.social-media-icon:first-child {
+  margin-left: 0px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.primary-color {
+  color: purple;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 14px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.footer-group div {
+  margin-top: 8px;
+}
+
+.footer-group div:hover {
+  color: grey;
+}
+
+.footer-group div svg:hover {
+  fill: grey;
+}
+
+.footer-social-media-icon-container {
+  display: flex;
+  margin-left: -3px;
 }
