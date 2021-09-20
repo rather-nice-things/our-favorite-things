@@ -1,14 +1,46 @@
 
 .main {
-  margin-top: 14px;
-  backdrop-filter: blur(10px);
-  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.6);
   width: 100%;
 }
 
 .hero {
-  height: 200px;
   width: 100%;
-
+  margin-top: 14px;
+  display: block;
 }
+
+.introTextContainer {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.introTextTitle {
+  font-size: 36px;
+  font-weight: 500;
+  font-family: 'Birthstone Bounce';
+  text-align: center;
+  padding-top: 10px;
+}
+
+.introText {
+  padding-top: 10px;
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.bodyTypesContainer {
+  width: 100%;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bodyType {
+  flex-basis: 20%;
+  border-radius: 25%;
+}
+
+.roundedImg {
+  border-radius: 25%;
+}
+
