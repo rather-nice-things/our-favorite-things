@@ -1,4 +1,5 @@
 import BlogEntryGroup from '../components/blogEntryGroup.jsx'
+import getAllBlogEntries from './api/allBlogEntries'
 
 const blogEntryList = [
   {
@@ -13,10 +14,20 @@ const blogEntryList = [
   }
 ]
 
-export default function Blog() {
+export default function Blog(props) {
+  console.log(props)
   return (
     <div>
       <BlogEntryGroup blogEntryList={blogEntryList} />
     </div>
   )
+}
+
+export async function getStaticProps(context) {
+
+  console.log(getAllBlogEntries())
+
+  return {
+    props: {},
+  }
 }
