@@ -1,4 +1,7 @@
 const mongoose = require('mongoose')
+const BlogEntry = require('./blogEntryModel.js')
+
+console.log("Do console logs still work?")
 
 // Connecting to the database
 mongoose.connect(`mongodb://localhost:27017/our-favorite-things`, {useNewUrlParser: true, useUnifiedTopology: true})
@@ -6,18 +9,6 @@ mongoose.connect(`mongodb://localhost:27017/our-favorite-things`, {useNewUrlPars
 .catch( err => console.log("Connection error: ", err))
 
 const connection = mongoose.connection
-
-// Setting up schemas and models
-const blogEntrySchema = new mongoose.Schema({
-  author: String,
-  title: String,
-  date: { type: Date, default: Date.now },
-  body: String,
-  imageURL: String,
-  tags: [String]
-})
-
-const BlogEntry = mongoose.model('BlogEntry', blogEntrySchema)
 
 // Functions that retrieve information from the database
 const getBlogEntry = (query, callback) => {
@@ -67,5 +58,4 @@ const dropAllCollections = () => {
 exports.getBlogEntry = getBlogEntry;
 exports.addBlogEntry = addBlogEntry;
 exports.dropAllCollections = dropAllCollections;
-exports.BlogEntry = BlogEntry;
 exports.connection = connection;
