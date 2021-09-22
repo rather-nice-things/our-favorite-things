@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pop": "node ./database/populateDatabase.js",
+    "drop": "node -e 'require(\"./database/database.js\").dropAllCollections()'"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -15,6 +17,8 @@
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "faker": "^5.5.3",
+    "mongoose": "^6.0.6"
   }
 }

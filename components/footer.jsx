@@ -3,7 +3,7 @@ export default function Footer(props) {
   const menuItems = props.menuItems;
 
   return (
-    <div className="footer-container">
+    <div className="footer-container glass">
       <div className="footer-nav footer-group">
         {
           menuItems.map((item, index) => {
@@ -13,8 +13,9 @@ export default function Footer(props) {
       </div>
       <div className="footer-body-types footer-group">
         <div className="cursor-pointer">Avocado</div>
-        <div className="cursor-pointer">Pear</div>
-        <div className="cursor-pointer">Apple</div>
+        <div className="cursor-pointer">Strawberry</div>
+        <div className="cursor-pointer">Lemon</div>
+        <div className="cursor-pointer">Peanut</div>
       </div>
       <div className="footer-legal footer-group">
         <div className="cursor-pointer">Privacy Policy</div>
