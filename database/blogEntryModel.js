@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const blogEntrySchema = new mongoose.Schema({
   author: String,
@@ -9,4 +9,4 @@ const blogEntrySchema = new mongoose.Schema({
   tags: [String]
 })
 
-export default mongoose.model('BlogEntry') ?? mongoose.model('BlogEntry', blogEntrySchema)
+export default mongoose.model('BlogEntry') || mongoose.model('BlogEntry', blogEntrySchema)
