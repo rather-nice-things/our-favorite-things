@@ -1,22 +1,20 @@
-const mongoose = require('mongoose')
-const BlogEntry = require('./blogEntryModel.js')
-
-console.log("Do console logs still work?")
+import mongoose from 'mongoose'
+import BlogEntry from './blogEntryModel.js'
 
 // Connecting to the database
 mongoose.connect(`mongodb://localhost:27017/our-favorite-things`, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log("Connected to database."))
 .catch( err => console.log("Connection error: ", err))
 
-const connection = mongoose.connection
+export const connection = mongoose.connection
 
 // Functions that retrieve information from the database
-const getBlogEntry = (query, callback) => {
-  return BlogEntry.find(query, callback)
+export const getBlogEntry = async (query) => {
+  return await BlogEntry.find(query)
 }
 
 // Functions that add information to the database
-const addBlogEntry = (entry, callback) => {
+export const addBlogEntry = (entry, callback) => {
   return BlogEntry.create({
     author: entry.author,
     title: entry.title,
@@ -28,7 +26,7 @@ const addBlogEntry = (entry, callback) => {
 }
 
 // Delete the database (careful!)
-const dropAllCollections = () => {
+export const dropAllCollections = () => {
   connection.on('connected', () => {
     connection.db.listCollections().toArray((err, collections) => {
       if (err) {
@@ -53,9 +51,3 @@ const dropAllCollections = () => {
     })
   })
 }
-
-// Exports
-exports.getBlogEntry = getBlogEntry;
-exports.addBlogEntry = addBlogEntry;
-exports.dropAllCollections = dropAllCollections;
-exports.connection = connection;
