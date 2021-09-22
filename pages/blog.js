@@ -1,33 +1,21 @@
 import BlogEntryGroup from '../components/blogEntryGroup.jsx'
-import getAllBlogEntries from './api/allBlogEntries'
-
-const blogEntryList = [
-  {
-    author: "Testy McTestface",
-    title: "My Title",
-    body: "Lorem whatever blah blah",
-  },
-  {
-    author: "Testy McTestface II",
-    title: "My Sequel",
-    body: "Lorem whatever blah blah",
-  }
-]
+import { getBlogEntry } from '../database/database.js'
 
 export default function Blog(props) {
-  console.log(props)
   return (
     <div>
-      <BlogEntryGroup blogEntryList={blogEntryList} />
+      <BlogEntryGroup blogEntryList={props.allBlogEntries} />
     </div>
   )
 }
 
 export async function getStaticProps(context) {
 
-  console.log(getAllBlogEntries())
+  const result = await getBlogEntry({})
 
   return {
-    props: {},
+    props: {
+      allBlogEntries: JSON.parse(JSON.stringify(result))
+    },
   }
 }
